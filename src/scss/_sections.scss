@@ -18,3 +18,31 @@
     opacity: 1;
   }
 }
+
+.active {
+  color: $color-secondary;
+}
+
+.list div:last-child {
+  border: 0;
+}
+
+.submenu {
+  li {
+    border-right: 1px solid $color-primary;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  li:last-child {
+    border-right: 0;
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+
+.px-14 {
+  @media (max-width: 980px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

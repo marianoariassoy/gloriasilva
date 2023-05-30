@@ -1,5 +1,5 @@
-const TextHTML = ({ text }) => {
-  return <div dangerouslySetInnerHTML={{ __html: text }} />;
+const TextHTML = ({ content }) => {
+  return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
 export default TextHTML;

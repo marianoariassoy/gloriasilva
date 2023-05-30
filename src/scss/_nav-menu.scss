@@ -1,15 +1,19 @@
 #nav-menu {
   cursor: pointer;
-  width: 36px;
+  width: 35px;
+  display: none;
+  @media (max-width: 980px) {
+    display: inline-block;
+  }
 }
 #nav-menu > span {
   background-color: $color-primary;
   display: block;
-  height: 5px;
+  height: 2px;
   width: 36px;
 }
 #nav-menu > span:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 #nav-menu,
 #nav-menu > span {

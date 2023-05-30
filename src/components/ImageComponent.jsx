@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDataContext } from "../context/lanContext";
+import { useDataContext } from "../context/language";
 import BeatLoader from "react-spinners/BeatLoader";
 
 const ImageComponent = ({ src, alt }) => {
@@ -16,7 +16,7 @@ const ImageComponent = ({ src, alt }) => {
 
   return (
     <>
-      <div className="flex items-center justify-center h-full w-full">{isLoading ? <BeatLoader /> : <img src={imageURL + src} alt={alt} className="fade-in h-full w-full object-cover" />}</div>
+      <div className="flex items-center justify-center w-full">{isLoading ? <BeatLoader /> : <img src={imageURL + src} alt={alt} className="fade-in w-full" />}</div>
     </>
   );
 };
