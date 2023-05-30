@@ -1,0 +1,34 @@
+#nav-menu {
+  cursor: pointer;
+  width: 36px;
+}
+#nav-menu > span {
+  background-color: $color-primary;
+  display: block;
+  height: 5px;
+  width: 36px;
+}
+#nav-menu > span:not(:last-child) {
+  margin-bottom: 5px;
+}
+#nav-menu,
+#nav-menu > span {
+  transition: all 0.4s ease;
+}
+#nav-menu.active {
+  transform: rotate(45deg);
+  transition-delay: 0.8s;
+}
+#nav-menu.active > span:nth-child(2) {
+  width: 0;
+}
+#nav-menu.active > span:nth-child(1),
+#nav-menu.active > span:nth-child(3) {
+  transition-delay: 0.4s;
+}
+#nav-menu.active > span:nth-child(1) {
+  transform: translateY(9px);
+}
+#nav-menu.active > span:nth-child(3) {
+  transform: translateY(-9px) rotate(90deg);
+}
