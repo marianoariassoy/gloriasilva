@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import ImageComponent from "../../components/ImageComponent";
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
+import { Helmet } from "react-helmet";
 
 const biografia = () => {
   const { lan } = useDataContext();
@@ -10,6 +11,14 @@ const biografia = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>GLORIA SILVA &bull; BIOGRAFIA</title>
+        <meta property="og:title" content="GLORIA SILVA PHOTO" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="http://gloriasilvaphoto.com/biografia" />
+        <link rel="canonical" href="http://gloriasilvaphoto.com/biografia" />
+      </Helmet>
+
       <section className="mt-40 px-14">
         {loading
           ? ""

@@ -14,11 +14,7 @@ const ImageComponent = ({ src, alt }) => {
     };
   }, [src]);
 
-  return (
-    <>
-      <div className="flex items-center justify-center w-full">{isLoading ? <BeatLoader /> : <img src={imageURL + src} alt={alt} className="fade-in w-full" />}</div>
-    </>
-  );
+  return <div className="flex items-center justify-center w-full  ">{isLoading ? <BeatLoader /> : <img src={imageURL + src} alt={alt} className="fade-in w-full " />}</div>;
 };
 
 export default ImageComponent;

@@ -174,4 +174,14 @@ a {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+.modal-image {
+  height: 80vh;
+}
+@media (max-width: 980px) {
+  .modal-image {
+    height: auto;
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -4,6 +4,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 import Layout from "../../components/Layout";
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
+import { Helmet } from "react-helmet";
 
 const palabras = () => {
   const { lan } = useDataContext();
@@ -49,6 +50,14 @@ const palabras = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>GLORIA SILVA &bull; PALABRAS</title>
+        <meta property="og:title" content="GLORIA SILVA PHOTO" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="http://gloriasilvaphoto.com/palabras" />
+        <link rel="canonical" href="http://gloriasilvaphoto.com/palabras" />
+      </Helmet>
+
       <div className="fixed w-full top-24 z-40 lg:flex px-14 bg-white pb-4">
         <div className="header-col-1"> </div>
         <div className="header-col-2">
