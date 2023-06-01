@@ -58,7 +58,7 @@ const palabras = () => {
         <link rel="canonical" href="http://gloriasilvaphoto.com/palabras" />
       </Helmet>
 
-      <div className="fixed z-40 w-full top-16 lg:flex px-14 bg-white pb-4">
+      <div className="fixed z-40 w-full top-16 lg:top-24 lg:flex px-14 bg-white pb-4">
         <div className="header-col-1"> </div>
         <div className="header-col-2">
           <div className="block mb-2 mt-2 lg:hidden">
@@ -87,7 +87,7 @@ const palabras = () => {
               filteredData &&
               filteredData.map((item, index) => (
                 <div key={index} className="mb-8 border-b pb-8">
-                  <h1 className="lg:text-xl font-tertiary font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_eng}</h1>
+                  <h1 className="font-tertiary font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_eng}</h1>
                   <div className="text-justify font-tertiary">
                     <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_eng} />
                   </div>

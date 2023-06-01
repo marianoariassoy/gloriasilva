@@ -78,7 +78,7 @@ const Imagenes = () => {
         <link rel="canonical" href="http://gloriasilvaphoto.com/imagenes" />
       </Helmet>
 
-      <div className="fixed w-full top-16 z-40 lg:flex px-14 bg-white pb-4">
+      <div className="fixed w-full top-16 z-40 lg:top-24 lg:flex px-14 bg-white pb-4">
         <div className="header-col-1"> </div>
         <div className="header-col-2">
           <div className="block mb-2 mt-2 lg:hidden">
