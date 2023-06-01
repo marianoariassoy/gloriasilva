@@ -46,6 +46,10 @@ a {
   background-color: #1d1d1b;
 }
 
+.bg-secondary {
+  background-color: #00566a;
+}
+
 .nav-home nav ul li a {
   color: #fff;
 }
@@ -80,55 +84,6 @@ a {
   width: 100%;
 }
 
-#nav-menu {
-  cursor: pointer;
-  width: 35px;
-  display: none;
-}
-@media (max-width: 980px) {
-  #nav-menu {
-    display: inline-block;
-  }
-}
-
-#nav-menu > span {
-  background-color: #1d1d1b;
-  display: block;
-  height: 2px;
-  width: 36px;
-}
-
-#nav-menu > span:not(:last-child) {
-  margin-bottom: 7px;
-}
-
-#nav-menu,
-#nav-menu > span {
-  transition: all 0.4s ease;
-}
-
-#nav-menu.active {
-  transform: rotate(45deg);
-  transition-delay: 0.8s;
-}
-
-#nav-menu.active > span:nth-child(2) {
-  width: 0;
-}
-
-#nav-menu.active > span:nth-child(1),
-#nav-menu.active > span:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
-#nav-menu.active > span:nth-child(1) {
-  transform: translateY(9px);
-}
-
-#nav-menu.active > span:nth-child(3) {
-  transform: translateY(-9px) rotate(90deg);
-}
-
 .indicators {
   position: absolute;
   bottom: 2rem;
@@ -139,7 +94,7 @@ a {
 }
 
 .fade-in {
-  animation: fadeIn 0.5s ease forwards;
+  animation: fadeIn 0.3s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -150,8 +105,26 @@ a {
     opacity: 1;
   }
 }
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .active {
   color: #00566a;
+}
+@media (max-width: 980px) {
+  .active {
+    color: white;
+    text-decoration: underline;
+  }
 }
 
 .list div:last-child {

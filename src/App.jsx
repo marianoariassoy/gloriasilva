@@ -8,18 +8,16 @@ import Contacto from "./pages/contacto/Contacto";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/imagenes" element={<Imagenes />} />
-          <Route path="/palabras" element={<Palabras />} />
-          <Route path="/biografia" element={<Biografia />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/imagenes" element={<Imagenes />} />
+        <Route path="/palabras" element={<Palabras />} />
+        <Route path="/biografia" element={<Biografia />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

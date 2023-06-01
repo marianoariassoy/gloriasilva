@@ -32,11 +32,11 @@ const menuItems = [
   },
 ];
 
-const Nav = ({ showAlways }) => {
+const Nav = () => {
   const { lan } = useDataContext();
 
   return (
-    <nav className={`${showAlways === "true" ? "" : "hidden lg:block"}`}>
+    <nav className="hidden lg:block">
       <ul className="font-secondary mt-8 lg:mt-0 flex gap-8 lg:gap-20 flex-wrap items-start">
         {menuItems.map((item) => (
           <li key={item.id}>

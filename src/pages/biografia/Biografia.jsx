@@ -19,6 +19,15 @@ const biografia = () => {
         <link rel="canonical" href="http://gloriasilvaphoto.com/biografia" />
       </Helmet>
 
+      <div className="fixed z-40 w-full top-16 px-14 bg-white pb-4 block lg:hidden">
+        <div className="header-col-1"> </div>
+        <div className="header-col-2">
+          <div className=" mb-2 mt-2">
+            <h1 className="font-bold"> {lan === "es" ? "Biografía" : lan === "en" ? "Biography" : "Biografia"}</h1>
+          </div>
+        </div>
+      </div>
+
       <section className="mt-40 px-14">
         {loading
           ? ""

@@ -3,6 +3,7 @@ import { useDataContext } from "../../context/language";
 import Layout from "../../components/Layout";
 import Modal from "../../components/Modal";
 import GalleryItem from "../../components/GalleryItem";
+import ImageComponent from "../../components/ImageComponent";
 
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
@@ -77,9 +78,13 @@ const Imagenes = () => {
         <link rel="canonical" href="http://gloriasilvaphoto.com/imagenes" />
       </Helmet>
 
-      <div className="fixed w-full top-24 z-40 lg:flex px-14 bg-white pb-4">
+      <div className="fixed w-full top-16 z-40 lg:flex px-14 bg-white pb-4">
         <div className="header-col-1"> </div>
         <div className="header-col-2">
+          <div className="block mb-2 mt-2 lg:hidden">
+            <h1 className="font-bold"> {lan === "es" ? "Imágenes" : lan === "en" ? "Images" : "Imagens"}</h1>
+          </div>
+
           <ul className="submenu flex text-sm flex-wrap">
             {loading
               ? ""
@@ -93,13 +98,14 @@ const Imagenes = () => {
           </ul>
         </div>
       </div>
-      <section className="mt-48 lg:mt-40 px-14">
+
+      <section className="mt-48 lg:mt-40 px-14 hidden lg:block">
         {data &&
           data
             .filter((item) => item.id === itemShow)
             .map((item) => (
               <div key={item.id} className="lg:flex">
-                <div className="header-col-1 text-sm lg:pr-20 pb-12">
+                <div className="header-col-1 text-sm lg:pr-20 pb-12 ">
                   {item.text2 && (
                     <div className="text-right mb-8">
                       <TextHTML content={lan === "es" ? item.text2 : lan === "en" ? item.text2_eng : item.text2_eng} />
@@ -118,6 +124,39 @@ const Imagenes = () => {
                         </div>
                       ))}
                   </div>
+                </div>
+              </div>
+            ))}
+      </section>
+
+      <section className="mt-44 block lg:hidden">
+        {data &&
+          data
+            .filter((item) => item.id === itemShow)
+            .map((item) => (
+              <div key={item.id}>
+                <div className="w-full text-sm py-8 text-white bg-secondary mb-8 px-14">
+                  {item.text2 && (
+                    <div className="mb-8">
+                      <TextHTML content={lan === "es" ? item.text2 : lan === "en" ? item.text2_eng : item.text2_eng} />
+                    </div>
+                  )}
+                  <div>
+                    <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_eng} />
+                  </div>
+                </div>
+                <div className="px-14 pb-8">
+                  {filteredGallery &&
+                    filteredGallery.map((item) => (
+                      <div key={item.id} className="mb-8">
+                        <ImageComponent src={item.image} alt="" />
+                        {item.text && (
+                          <div className="text-sm mt-4 ">
+                            <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_eng} />
+                          </div>
+                        )}
+                      </div>
+                    ))}
                 </div>
               </div>
             ))}
