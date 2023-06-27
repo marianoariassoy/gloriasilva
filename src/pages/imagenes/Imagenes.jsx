@@ -1,30 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDataContext } from "../../context/language";
 import Layout from "../../components/Layout";
 import Modal from "../../components/Modal";
 import GalleryItem from "../../components/GalleryItem";
 import ImageComponent from "../../components/ImageComponent";
-
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
 import { Helmet } from "react-helmet";
+import PresentacionImagenes from "../../components/PresentacionImagenes";
 
 const Imagenes = () => {
   const { lan } = useDataContext();
   const { data, loading } = useFetch(`/trabajos`);
   const { data: gallery } = useFetch(`/imagenes`);
-  let filteredGallery = [];
-
   const [itemShow, setItemShow] = useState(null);
   const [currentImage, setCurrentImage] = useState(null);
   const [currentIndex, setcurrentIndex] = useState(false);
   const [imageTitle, setImageTitle] = useState("");
-
-  useEffect(() => {
-    if (data) {
-      setItemShow(data[0].id);
-    }
-  }, [data]);
+  let filteredGallery = [];
 
   const filterData = (gallery) => {
     return gallery.filter((item) => {
@@ -86,33 +79,33 @@ const Imagenes = () => {
           </div>
 
           <ul className="submenu flex text-sm flex-wrap">
-            {loading
-              ? ""
-              : data.map((item) => (
-                  <li key={item.id} className="mb-2">
-                    <button className={`hover:opacity-70 ${item.id === itemShow && "text-secondary"}`} onClick={() => handleFilter(item.id)}>
-                      {lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_eng}
-                    </button>
-                  </li>
-                ))}
+            {!loading &&
+              data &&
+              data.map((item) => (
+                <li key={item.id} className="mb-2">
+                  <button className={`hover:opacity-70 ${item.id === itemShow && "text-secondary"}`} onClick={() => handleFilter(item.id)}>
+                    {lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_por}
+                  </button>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
 
-      <section className="mt-48 lg:mt-40 px-14 hidden lg:block">
-        {data &&
-          data
-            .filter((item) => item.id === itemShow)
-            .map((item) => (
-              <div key={item.id} className="lg:flex">
+      {itemShow &&
+        data
+          .filter((item) => item.id === itemShow)
+          .map((item) => (
+            <section key={item.id} className="mt-48 lg:mt-40 px-14 hidden lg:block">
+              <div className="lg:flex">
                 <div className="header-col-1 text-sm lg:pr-20 pb-12 ">
                   {item.text2 && (
-                    <div className="text-right mb-8">
-                      <TextHTML content={lan === "es" ? item.text2 : lan === "en" ? item.text2_eng : item.text2_eng} />
+                    <div className="text-right mb-8 italic">
+                      <TextHTML content={lan === "es" ? item.text2 : lan === "en" ? item.text2_eng : item.text2_por} />
                     </div>
                   )}
                   <div>
-                    <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_eng} />
+                    <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_por} />
                   </div>
                 </div>
                 <div className="header-col-2 pb-8">
@@ -126,8 +119,10 @@ const Imagenes = () => {
                   </div>
                 </div>
               </div>
-            ))}
-      </section>
+            </section>
+          ))}
+
+      {!itemShow && <PresentacionImagenes />}
 
       <section className="mt-44 block lg:hidden">
         {data &&

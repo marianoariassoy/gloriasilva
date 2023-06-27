@@ -1,36 +1,6 @@
 import { useDataContext } from "../context/language";
 import { NavLink } from "react-router-dom";
-
-const menuItems = [
-  {
-    id: 1,
-    title: "IMÁGENES",
-    title_eng: "IMAGES",
-    title_pr: "IMAGENS",
-    url: "/imagenes",
-  },
-  {
-    id: 2,
-    title: "PALABRAS",
-    title_eng: "WORDS",
-    title_pr: "PALAVRAS",
-    url: "/palabras",
-  },
-  {
-    id: 3,
-    title: "BIOGRAFÍA",
-    title_eng: "BIOGRAPHY",
-    title_pr: "BIOGRAFIA",
-    url: "/biografia",
-  },
-  {
-    id: 4,
-    title: "CONTACTO",
-    title_eng: "CONTACT",
-    title_pr: "CONTACTO",
-    url: "/contacto",
-  },
-];
+import { menuItems } from "../data/data";
 
 const Nav = () => {
   const { lan } = useDataContext();

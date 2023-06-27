@@ -4,7 +4,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 
 const GalleryLoader = () => {
   return (
-    <div className="h-full w-full bg-secondary z-40 flex items-center justify-center">
+    <div className="h-full w-full z-40 flex items-center justify-center">
       <BeatLoader />
     </div>
   );

@@ -70,3 +70,14 @@
     width: 100%;
   }
 }
+
+.text-sm {
+  font-size: 0.8rem !important;
+}
+
+.presentation {
+  @media (max-width: 980px) {
+    background: $color-secondary;
+    color: white;
+  }
+}

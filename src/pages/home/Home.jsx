@@ -29,11 +29,11 @@ const Home = () => {
           <Lan />
         </div>
 
-        <div className="fixed top-1/2 z-20 fade-in items-end px-14 hidden lg:flex">
+        <div className="fixed top-1/2 z-20 fade-in items-end px-14 hidden lg:flex cursor-pointer [&>.nav-home]:hover:block">
           <div className="header-col-1">
             <h1 className="text-white font-secondary text-4xl ">GLORIA SILVA</h1>
           </div>
-          <div className="nav-home header-col-2">
+          <div className="nav-home header-col-2 hidden">
             <Nav />
           </div>
         </div>

@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import BeatLoader from "react-spinners/BeatLoader";
 import { useDataContext } from "../../context/language";
+import { text } from "../../data/data";
 
 const Error = () => {
-  return <div className="text-red-500 text-sm">Debe completar este campo</div>;
+  const { lan } = useDataContext();
+  return <div className="text-red-500 text-sm">{text[lan].required}</div>;
 };
 
 const Form = () => {
@@ -44,33 +46,6 @@ const Form = () => {
         setError(true);
         setSended(false);
       });
-  };
-
-  const text = {
-    es: {
-      name: "NOMBRE",
-      email: "EMAIL",
-      message: "MENSAJE",
-      send: "ENVIAR",
-      thanks: "Gracias por contactarse con nosotros.",
-      error: "Se produjo un error al enviar el mensaje :-(",
-    },
-    en: {
-      name: "NAME",
-      email: "EMAIL",
-      message: "MESSAGE",
-      send: "SEND",
-      thanks: "Thanks for contacting us.",
-      error: "An error occurred while sending the message :-(",
-    },
-    pr: {
-      name: "NAME",
-      email: "EMAIL",
-      message: "MESSAGE",
-      send: "SEND",
-      thanks: "Thanks for contacting us.",
-      error: "An error occurred while sending the message :-(",
-    },
   };
 
   return (

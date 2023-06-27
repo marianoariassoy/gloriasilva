@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useDataContext } from "../../context/language";
-import BeatLoader from "react-spinners/BeatLoader";
 import Layout from "../../components/Layout";
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
 import { Helmet } from "react-helmet";
+import PresentacionPalabras from "../../components/PresentacionPalabras";
+import { useDataContext } from "../../context/language";
 
 const palabras = () => {
   const { lan } = useDataContext();
-  const [category, setCategory] = useState(3);
+  const [category, setCategory] = useState(null);
   const { data, loading } = useFetch(`/palabras`);
   let filteredData = [];
 
@@ -69,7 +69,7 @@ const palabras = () => {
             {menuItems.map((item, index) => (
               <li key={index}>
                 <button className={`hover:opacity-70 ${item.category === category && "text-secondary"}`} onClick={() => handleFilter(item.category)}>
-                  {lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_pr}
+                  {lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_por}
                 </button>
               </li>
             ))}
@@ -80,23 +80,22 @@ const palabras = () => {
       <section className="lg:flex mt-40 px-14">
         <div className="header-col-1"></div>
         <div className="header-col-2 w-96">
-          <div className="list w-full max-w-xl">
-            {loading ? (
-              <BeatLoader />
-            ) : (
+          <div className="list w-full max-w-3xl">
+            {!loading &&
               filteredData &&
               filteredData.map((item, index) => (
-                <div key={index} className="mb-8 border-b pb-8">
-                  <h1 className="font-tertiary font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_eng}</h1>
+                <div key={index} className="mb-8 border-b pb-8 text-sm">
+                  <h1 className="font-tertiary font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_por}</h1>
                   <div className="text-justify font-tertiary">
-                    <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_eng} />
+                    <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_por} />
                   </div>
                 </div>
-              ))
-            )}
+              ))}
           </div>
         </div>
       </section>
+
+      {!category && <PresentacionPalabras />}
     </Layout>
   );
 };
