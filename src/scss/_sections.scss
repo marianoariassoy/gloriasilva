@@ -33,6 +33,7 @@
 
 .active {
   color: $color-secondary;
+  border-bottom: 1px solid $color-secondary;
   @media (max-width: 980px) {
     color: white;
     text-decoration: underline;
@@ -69,10 +70,6 @@
     height: auto;
     width: 100%;
   }
-}
-
-.text-sm {
-  font-size: 0.8rem !important;
 }
 
 .presentation {

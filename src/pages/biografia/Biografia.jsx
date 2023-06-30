@@ -1,12 +1,15 @@
+import { Helmet } from "react-helmet";
 import { useDataContext } from "../../context/language";
+import BeatLoader from "react-spinners/BeatLoader";
 import Layout from "../../components/Layout";
 import ImageComponent from "../../components/ImageComponent";
 import useFetch from "../../hooks/useFetch";
 import TextHTML from "../../hooks/useHTML";
-import { Helmet } from "react-helmet";
 
 const biografia = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { lan } = useDataContext();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data, loading } = useFetch(`/bio`);
 
   return (
@@ -28,24 +31,26 @@ const biografia = () => {
         </div>
       </div>
 
-      <section className="mt-40 px-14 ">
-        {!loading &&
+      <section className="mt-40 px-14">
+        {loading ? (
+          <BeatLoader />
+        ) : (
           data.map((item, index) => (
             <div className="lg:flex w-full pb-12" key={index}>
               <div className="header-col-1 pb-8 lg:pb-0 lg:pr-20">
                 <ImageComponent src={item.image} alt={item.title} />
               </div>
-              <div className="header-col-2">
+              <div className="header-col-2 text-sm text-secondary">
                 <div className="w-full max-w-xl">
-                  {item.title && <h1 className="text-xl font-tertiary font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_por}</h1>}
-
-                  <div className="text-justify font-tertiary">
+                  {item.title && <h1 className="text-xl font-bold mb-4 text-secondary">{lan === "es" ? item.title : lan === "en" ? item.title_eng : item.title_por}</h1>}
+                  <div className="text-justify">
                     <TextHTML content={lan === "es" ? item.text : lan === "en" ? item.text_eng : item.text_por} />
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        )}
       </section>
     </Layout>
   );

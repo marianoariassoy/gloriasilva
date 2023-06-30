@@ -5,8 +5,9 @@ body {
   font-family: $font-main;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
   @media (max-width: 980px) {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -26,7 +27,7 @@ a {
   font-family: $font-secondary;
 }
 .font-tertiary {
-  font-family: $font-tertiary;
+  font-family: $font-tertiary !important;
 }
 
 .text-primary {
