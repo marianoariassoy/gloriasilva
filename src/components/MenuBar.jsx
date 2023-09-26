@@ -1,18 +1,21 @@
-import iconOpen from "../assets/icon-open.svg";
+import { Open } from '../icons/icons'
 
 const MenuBar = () => {
   const open = () => {
-    const menu = document.getElementById("menu-mobile");
-    menu.classList.remove("hidden");
-    menu.classList.add("flex");
-    menu.classList.add("fade-in");
-  };
+    const menu = document.getElementById('menu-mobile')
+    menu.classList.remove('hidden')
+    menu.classList.add('flex')
+    menu.classList.add('fade-in')
+  }
 
   return (
-    <button className="block lg:hidden hover:opacity-70" onClick={open}>
-      <img src={iconOpen} />
+    <button
+      className='block lg:hidden hover:opacity-70'
+      onClick={open}
+    >
+      <Open />
     </button>
-  );
-};
+  )
+}
 
-export default MenuBar;
+export default MenuBar

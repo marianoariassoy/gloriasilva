@@ -43,3 +43,13 @@ a {
 .bg-secondary {
   background-color: $color-secondary;
 }
+
+svg {
+  fill: currentColor;
+  polyline {
+    stroke: currentColor;
+  }
+  line {
+    stroke: currentColor;
+  }
+}
