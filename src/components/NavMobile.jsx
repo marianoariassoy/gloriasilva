@@ -22,9 +22,9 @@ const NavMobile = () => {
     },
     {
       id: 3,
-      title: 'BIOGRAFÍA',
-      title_eng: 'BIOGRAPHY',
-      title_pr: 'BIOGRAFIA',
+      title: 'BIO',
+      title_eng: 'BIO',
+      title_pr: 'BIO',
       url: '/biografia',
     },
     {
@@ -52,7 +52,9 @@ const NavMobile = () => {
     >
       <div className='absolute top-0 w-full px-14 py-8 flex justify-between items-start'>
         <div>
-          <h1 className='text-white font-secondary text-2xl'>GLORIA SILVA</h1>
+          <h1 className='text-white font-secondary text-2xl'>
+            GLORIA SILVA SEEBER
+          </h1>
         </div>
 
         <button

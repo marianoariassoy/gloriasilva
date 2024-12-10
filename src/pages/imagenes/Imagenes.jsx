@@ -42,11 +42,20 @@ const Imagenes = () => {
     if (currentIndex === filteredGallery.length - 1) {
       setCurrentImage(filteredGallery[0].image)
       setcurrentIndex(0)
-      setImageTitle(filteredGallery[0].text)
+      lan === 'es'
+        ? setImageTitle(filteredGallery[0].text)
+        : lan === 'en'
+        ? setImageTitle(filteredGallery[0].text_eng)
+        : setImageTitle(filteredGallery[0].text_por)
     } else {
       setCurrentImage(filteredGallery[currentIndex + 1].image)
       setcurrentIndex(currentIndex + 1)
-      setImageTitle(filteredGallery[currentIndex + 1].text)
+
+      lan === 'es'
+        ? setImageTitle(filteredGallery[currentIndex + 1].text)
+        : lan === 'en'
+        ? setImageTitle(filteredGallery[currentIndex + 1].text_eng)
+        : setImageTitle(filteredGallery[currentIndex + 1].text_por)
     }
   }
   const handelPrev = () => {
@@ -86,10 +95,14 @@ const Imagenes = () => {
       <div className='fixed w-full top-16 z-40 lg:top-24 lg:flex px-14 bg-white pb-4'>
         <div className='header-col-1'> </div>
         <div className='header-col-2'>
-          <div className='block mb-2 mt-2 lg:hidden'>
+          <div className='block mb-2 mt-2 '>
             <h1 className='font-bold'>
               {' '}
-              {lan === 'es' ? 'Imágenes' : lan === 'en' ? 'Images' : 'Imagens'}
+              {lan === 'es'
+                ? 'Proyectos'
+                : lan === 'en'
+                ? 'Projects'
+                : 'Projectos'}
             </h1>
           </div>
 
@@ -130,7 +143,7 @@ const Imagenes = () => {
               <div className='lg:flex'>
                 <div className='header-col-1 text-sm lg:pr-20 pb-12 '>
                   {item.text2 && (
-                    <div className='text-right mb-8 italic'>
+                    <div className='mb-8 italic'>
                       <TextHTML
                         content={
                           lan === 'es'
@@ -155,7 +168,7 @@ const Imagenes = () => {
                   </div>
                 </div>
                 <div className='header-col-2 pb-8'>
-                  <div className='w-full grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8'>
+                  <div className='w-full grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12'>
                     {filteredGallery &&
                       filteredGallery.map((item, index) => (
                         <div

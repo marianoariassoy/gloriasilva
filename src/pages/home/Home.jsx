@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet'
-import Nav from '../../components/Nav'
+// import Nav from '../../components/Nav'
 import Lan from './Lan'
 import Slider from './Slider'
 import NavMobile from '../../components/NavMobile'
@@ -54,11 +54,12 @@ const Home = () => {
         <div className='fixed top-1/2 z-20 fade-in items-end px-14 hidden lg:flex cursor-pointer'>
           <div className='header-col-1'>
             <h1
-              className='text-white font-secondary text-4xl cursor-pointer'
+              className='text-white font-secondary text-3xl cursor-pointer'
               onClick={open}
             >
-              GLORIA SILVA
+              GLORIA SILVA SEEBER <br />
             </h1>
+            <h2 className='text-white font-secondary text-2xl'> Artista</h2>
           </div>
         </div>
 
@@ -68,8 +69,9 @@ const Home = () => {
             onClick={open}
           >
             <h1 className='text-white font-secondary text-3xl '>
-              GLORIA SILVA
+              GLORIA SILVA SEEBER
             </h1>
+            <h2 className='text-white font-secondary text-xl'> Artista</h2>
           </button>
         </div>
 
