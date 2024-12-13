@@ -6,7 +6,7 @@ const Nav = () => {
   const { lan } = useDataContext()
 
   return (
-    <nav className='hidden lg:block'>
+    <nav className='hidden lg:block mt-1'>
       <ul className='font-secondary mt-8 lg:mt-0 flex gap-8 lg:gap-20 items-start'>
         {menuItems.map((item) => (
           <li key={item.id}>

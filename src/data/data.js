@@ -1,16 +1,16 @@
 export const menuItems = [
   {
     id: 1,
-    title: 'IMÁGENES',
-    title_eng: 'IMAGES',
-    title_pr: 'IMAGENS',
+    title: 'PROYECTOS',
+    title_eng: 'PROJECTS',
+    title_pr: 'PROJETOS',
     url: '/imagenes',
   },
   {
     id: 2,
-    title: 'PALABRAS',
-    title_eng: 'WORDS',
-    title_pr: 'PALAVRAS',
+    title: 'POESÍA',
+    title_eng: 'POETRY',
+    title_pr: 'POESIA',
     url: '/palabras',
   },
   {

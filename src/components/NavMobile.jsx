@@ -8,16 +8,16 @@ const NavMobile = () => {
   const menuItems = [
     {
       id: 1,
-      title: 'IMÁGENES',
-      title_eng: 'IMAGES',
-      title_pr: 'IMAGENS',
+      title: 'PROYECTOS',
+      title_eng: 'Projects',
+      title_pr: 'Projetos',
       url: '/imagenes',
     },
     {
       id: 2,
-      title: 'PALABRAS',
-      title_eng: 'WORDS',
-      title_pr: 'PALAVRAS',
+      title: 'POESÍA',
+      title_eng: 'POETRY',
+      title_pr: 'POESIA',
       url: '/palabras',
     },
     {
@@ -55,6 +55,9 @@ const NavMobile = () => {
           <h1 className='text-white font-secondary text-2xl'>
             GLORIA SILVA SEEBER
           </h1>
+          <h2>
+            {lan === 'es' ? 'Artista' : lan === 'en' ? 'Artist' : 'Artista'}
+          </h2>
         </div>
 
         <button
@@ -73,7 +76,7 @@ const NavMobile = () => {
             >
               <NavLink
                 to={item.url}
-                className='hover:opacity-70 text-white'
+                className='hover:opacity-70 text-white uppercase'
               >
                 {lan === 'es'
                   ? item.title

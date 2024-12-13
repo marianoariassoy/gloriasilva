@@ -92,11 +92,11 @@ const Imagenes = () => {
         />
       </Helmet>
 
-      <div className='fixed w-full top-16 z-40 lg:top-24 lg:flex px-14 bg-white pb-4'>
+      <div className='fixed w-full top-16 z-40  lg:top-20 lg:flex px-14 bg-white lg:bg-transparent pb-4'>
         <div className='header-col-1'> </div>
-        <div className='header-col-2'>
-          <div className='block mb-2 mt-2 '>
-            <h1 className='font-bold'>
+        <div className='header-col-2 bg-white'>
+          <div className='block mb-2 mt-2'>
+            <h1 className='font-bold lg:hidden'>
               {' '}
               {lan === 'es'
                 ? 'Proyectos'
@@ -199,7 +199,7 @@ const Imagenes = () => {
 
       {!itemShow && <PresentacionImagenes />}
 
-      <section className='mt-44 block lg:hidden'>
+      <section className='mt-52 block lg:hidden'>
         {data &&
           data
             .filter((item) => item.id === itemShow)
